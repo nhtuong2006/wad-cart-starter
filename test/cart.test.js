@@ -50,3 +50,7 @@ test('non-integer qty throws RangeError', () => {
 test('zero qty throws RangeError', () => {
   assert.throws(() => cartTotal([line(1000, 0)], opts), RangeError)
 })
+
+test('NaN qty throws RangeError', () => {
+  assert.throws(() => cartTotal([line(1000, NaN)], opts), RangeError)
+})
